@@ -1,0 +1,204 @@
+/* Root Variables for Color Scheme */
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --background-color: #1a1a2e;
+    --text-color: #ffffff;
+    --button-color: #4a4a6a;
+}
+
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Container for Centered Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Editor Box Styling */
+.editor {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    overflow: hidden;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+/* Input and Text Areas Styling */
+.text-input {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-color);
+}
+
+.text-overlay p {
+    margin: 0 0 5px;
+    padding: 0 5px;
+    line-height: 1;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Special styling for lines starting with '*' */
+.text-overlay p.special {
+    color: #c2a2da;
+}
+
+/* Button Styles */
+.btn, .control-btn {
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 12px 20px;
+    background-color: var(--button-color);
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    border: none;
+}
+
+.btn:hover, .control-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Image Container */
+#imageContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#imageContainer::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-image: url('icao.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+}
+
+/* Uploaded Image Styling */
+#uploadedImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+/* Text Overlay Positioning */
+.text-overlay {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    pointer-events: none;
+}
+
+#topText {
+    top: 20px;
+}
+
+#bottomText {
+    bottom: 20px;
+}
+
+/* Font Size and Text Shadow Controls */
+.text-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.font-size-control, .shadow-control {
+    display: flex;
+    align-items: center;
+}
+
+.font-size-control label, .shadow-control label {
+    margin-right: 10px;
+}
+
+/* Button for Image Upload and Draft Controls */
+#imageUpload {
+    display: none;
+}
+
+/* Controls for Image and Text Customization */
+.controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.control-btn {
+    padding: 8px;
+    background-color: rgba(74, 74, 106, 0.7);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.control-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .editor {
+        width: 95%;
+    }
+
+    .text-overlay p {
+        font-size: 10px;
+    }
+
+    .control-btn {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .text-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .font-size-control, .shadow-control {
+        margin-bottom: 10px;
+    }
+}

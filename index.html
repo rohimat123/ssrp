@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ORCA SSRP Editor</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="controls-container">
+            <div class="image-controls">
+                <button class="btn" id="addNew">Baru</button>
+                <input id="imageUpload" type="file" accept="image/*">
+              <label for="imageUpload" class="btn">Gambar</label>
+                <button class="btn" id="saveImage">Simpan</button>
+            </div>
+        </div>
+        <div class="editor">
+            <div id="imageContainer">
+                <img alt="Uploaded Image" id="uploadedImage">
+                <div class="text-overlay" id="topText"></div>
+                <div class="text-overlay" id="bottomText"></div>
+                <div class="controls">
+                    <button class="control-btn" id="zoomIn">+</button>
+                    <button class="control-btn" id="zoomOut">-</button>
+                    <button class="control-btn" id="moveUp">↑</button>
+                    <button class="control-btn" id="moveLeft">←</button>
+                    <button class="control-btn" id="moveDown">↓</button>
+                    <button class="control-btn" id="moveRight">→</button>
+                    <button class="control-btn" id="resetPosition">⟲</button>
+                </div>
+            </div>
+            <div class="text-controls">
+                <div class="font-size-control">
+                    <label for="fontSize">Ukuran Font:</label>
+                    <input id="fontSize" type="range" max="24" min="8" step="1" value="14">
+                    <span id="fontSizeValue">14px</span>
+                </div>
+                <div class="shadow-control">
+                    <label for="textShadow">Bayangan Teks:</label>
+                    <input id="textShadow" type="checkbox">
+                </div>
+            </div>
+            <textarea class="text-input" id="topTextInput" placeholder="kalau mau '*' kasih spasi" rows="3"></textarea>
+            <textarea class="text-input" id="bottomTextInput" placeholder="Masukkan teks bawah (maks. 6 baris)" rows="3"></textarea>
+            <div class="image-controls">
+                <div class="draft-controls">
+                    <button class="btn" id="saveDraft">Save Draft</button>
+                    <select class="btn" id="draftList">
+                        <option disabled selected value="">Pilih Draft</option>
+                    </select>
+                    <button class="btn" id="loadDraft">Load Draft</button>
+                    <button class="btn" id="clearDraft">Clear Draft</button
+                    <label for="credit">Credit :Cacio</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
