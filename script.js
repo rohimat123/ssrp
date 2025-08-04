@@ -218,9 +218,10 @@ saveImageBtn.addEventListener("click", function() {
 
         tCanvas.toBlob(function(blob) {
             let link = document.createElement("a");
-            link.download = "ORCA-SSRP.png";
+            link.download = "Rohiimatt-SSRP.png";
             link.href = URL.createObjectURL(blob);
             link.click();
         }, "image/png");
     });
 });
+
